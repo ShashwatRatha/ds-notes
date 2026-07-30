@@ -68,12 +68,12 @@ jobs:
           done
 
           if [ "$RENAMED_ANY" = true ]; then
-          git add "$NOTES_DIR"
-        git commit -m "chore: name formatted and file added to zip"
-        git push
-        else
-        echo "No unformatted PDF files found."
-        fi
+            git add "$NOTES_DIR"
+            git commit -m "chore: name formatted and file added to zip"
+            git push
+          else
+            echo "No unformatted PDF files found."
+          fi
 
       - name: Build Archives and Publish Release
         env:
