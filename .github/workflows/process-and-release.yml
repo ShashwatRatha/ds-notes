@@ -80,16 +80,16 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           NOTES_DIR="notes"
-          TIMESTAMP=$(date +'%Y%m%d-%H%M%S')
-          TAG_NAME="v${TIMESTAMP}"
+          TAG_NAME="latest"
 
-          # Compress notes folder
-          tar -czvf "notes-${TAG_NAME}.tar.gz" -C "$NOTES_DIR" .
-          zip -r "notes-${TAG_NAME}.zip" "$NOTES_DIR"
+          # Compress notes folder into static archive names
+          tar -czvf "notes-latest.tar.gz" -C "$NOTES_DIR" .
+          zip -r "notes-latest.zip" "$NOTES_DIR"
 
-          # Create release via GitHub CLI
+          # Create or update the single 'latest' release, overwriting existing assets
           gh release create "${TAG_NAME}" \
-                                         "notes-${TAG_NAME}.tar.gz" \
-                                                                   "notes-${TAG_NAME}.zip" \
-                                                                                          --title "Notes Release ${TAG_NAME}" \
-                                                                                                                             --notes "Automated publication of updated notes archives up to commit ${{ github.sha }}."
+            "notes-latest.tar.gz" \
+            "notes-latest.zip" \
+            --title "Latest Notes Package" \
+            --notes "Automated rolling release containing all notes up to commit ${{ github.sha }}." \
+            --overwrite
