@@ -82,14 +82,16 @@ jobs:
           NOTES_DIR="notes"
           TAG_NAME="latest"
 
-          # Compress notes folder into static archive names
+          # Compress notes folder
           tar -czvf "notes-latest.tar.gz" -C "$NOTES_DIR" .
           zip -r "notes-latest.zip" "$NOTES_DIR"
 
-          # Create or update the single 'latest' release, overwriting existing assets
+          # Delete existing 'latest' release and tag if they exist
+          gh release delete "${TAG_NAME}" --yes --cleanup-tag 2>/dev/null || true
+
+          # Create fresh release under the single 'latest' tag
           gh release create "${TAG_NAME}" \
             "notes-latest.tar.gz" \
             "notes-latest.zip" \
             --title "Latest Notes Package" \
-            --notes "Automated rolling release containing all notes up to commit ${{ github.sha }}." \
-            --overwrite
+            --notes "Automated rolling release containing all notes up to commit ${{ github.sha }}."
