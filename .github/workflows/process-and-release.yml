@@ -57,7 +57,7 @@ jobs:
           continue
           fi
 
-          NEW_NAME="DS D${CURRENT_INDEX} ${DATE_STR}.pdf"
+          NEW_NAME="DS D$(printf '%02d' $CURRENT_INDEX) ${DATE_STR}.pdf"
           NEW_PATH="${NOTES_DIR}/${NEW_NAME}"
 
           echo "Renaming '$filepath' -> '$NEW_PATH'"
