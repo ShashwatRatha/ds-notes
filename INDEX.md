@@ -16,4 +16,3 @@
 | DS D13 | Topological Sorting & Set Bounds | [Download PDF](notes/DS%20D13%2003-09.pdf) |
 | DS D14 | Lattices & Equiv. Partitions & Set Sizes I | [Download PDF](notes/DS%20D14%2010-09.pdf) |
 | DS D15 | Set Sizes II | [Download PDF](notes/DS%20D15%2017-09.pdf) |
-| DS D16 | Untitled Topic | [Download PDF](notes/DS%20D16%2018-09.pdf) |
