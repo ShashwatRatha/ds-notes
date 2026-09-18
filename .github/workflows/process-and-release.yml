@@ -38,7 +38,7 @@ jobs:
 
           # Extract topic name from commit message (*: topic-name)
           COMMIT_MSG="${{ github.event.head_commit.message }}"
-          TOPIC_NAME=$(echo "$COMMIT_MSG" | sed -n 's/\schore:\s*\(.*\)/\1/p')
+          TOPIC_NAME=$(echo "$COMMIT_MSG" | sed -n 's/chore:[[:space:]]*\(.*\)/\1/p')
 
           if [ -z "$TOPIC_NAME" ]; then
             TOPIC_NAME="Untitled Topic"
@@ -89,7 +89,7 @@ jobs:
 
           if [ "$RENAMED_ANY" = true ]; then
             git add "$NOTES_DIR" "$INDEX_FILE"
-            git commit -m "chore: format names, update INDEX.md and commit"
+            git commit -m "chore: format names, update INDEX.md and commit [skip-ci]"
             git push
           else
             echo "No unformatted PDF files found."
