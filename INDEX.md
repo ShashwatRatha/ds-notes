@@ -19,3 +19,4 @@
 | DS D16 | Set Countability & Diagonalisation Proofs | [Download PDF](notes/DS%20D16%2018-09.pdf) |
 | DS D17 | Recurrence Relations I | [Download PDF](notes/DS%20D17%2008-10.pdf) |
 | DS D18 | Recurrence Relations & Generating Functions | [Download PDF](notes/DS%20D18%2020-10.pdf) |
+| DS D19 | Group Theory I | [Download PDF](notes/DS%20D19%2006-11.pdf) |
