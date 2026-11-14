@@ -21,3 +21,4 @@
 ---------------------------------------------------------------------------------------------------
 | DS D21 | Recurrence Relations & Generating Functions | [Download PDF](notes/DS%20D18%2020-10.pdf) |
 | DS D22 | Group Theory I | [Download PDF](notes/DS%20D19%2006-11.pdf) |
+| DS D23 | Homomorphisms & Cyclic Groups | [Download PDF](notes/DS%20D23%2014-11.pdf) |
